@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //ES5新增的Array方法详解:
+
+    //----------1.forEach是Array新方法的其中一个,就是遍历,循环,------------
+    // (1)    [1,2,3,4].forEach(console.log);
+    // 和下面相同的结果
+    //    var array = [1, 2, 3, 4, 5, 6]
+    //    for (var a = 0; a < array.length; a++) {
+    //        console.log(array);
+    //    }
+    //  forEach方法中的function回调支持3个参数，第1个是遍历的数组内容；
+    //(2) 第2个是对应的数组索引，第3个是数组本身。
+    //     [1,2,3,4,5].forEach(function (item,index,array) {
+    //           console.log(item);
+    //           console.log(index);
+    //           console.log(array);
+    //
+    //     })
+    //(3)forEach不会占空位
+    //    var array = 0[1, 2, 3, 4]
+    //    delete array[1];
+    //    console.log(array);
+    //    // 2消失
+    //    array.forEach(console.log);
+
+    //------------2.map使用-----------------
+    //  是映射的意思 和forEach方法类似
+    //  也就是原数组被“映射”成对应新数组
+    //    var data = [1, 2, 3, 4];
+    //    var array=data.map(function (item) {
+    //        return item*item;
+    //    })
+    //    console.log(array);
+
+    //---3.filter过渡,筛选的意思------
+    //    var data = [0, 1, 3, 4];
+    //    var array = data.filter(function (item) {
+    //        return item;
+    //    })
+    //    console.log(array);
+    //    该filter()方法创建一个新的匹配过滤条件的数组。
+    //    var arr=[
+    //        {"name":"apple","count":2},
+    //        {"name":"orange","count":5},
+    //    ];
+    //    var newArr=arr.filter(function (item) {
+    //        return item.name=="orange";
+    //    })
+    //    console.log("filter results:",newArr)
+    //   对数组中的每一项运行给定函数，返回该函数会返回true的项的数组。
+    //    var numbers = [1,2,3,4,5,4,3,2,1];
+    //    var filterResult = numbers.filter(function(item,index,array){//item指代数组值;index指代数组下标;array指代数组本身；
+    //        return (item>2);
+    //    });
+    //    alert(filterResult);
+
+    //--------4some-------
+    //    some意指“某些”，指是否“某些项”合乎条件。与下面的every算是好基友，
+    // every表示是否“每一项”都要靠谱。用法如下：
+    //    var scores = [45, 60, 70, 65, 95, 85];
+    //    var current = 60;
+    //    function passed(score) {
+    //        return score > current;
+    //    }
+    //    console.log(scores.some(passed));
+
+    //------5.every:函数用来测试每个元素。thisObject: 对象作为该执行回调时使用。
+    //    这个公式就是arr的每个值都大于brr就返回true
+    //    var arr = [1, 2, 3, 4, 5, 6]
+    //    var brr = 0;
+    //    function passed(arr) {
+    //        return arr > brr;
+    //    }
+    //    console.log(arr.every(passed))
+
+    // ------6indexOf--------
+    //    indexOf()方法返回在该数组中第一个找到的元素位置，如果它不存在则返回-1。
+    //    var arr = [1, 2, 3, 4, 5]
+    //    console.log(arr.indexOf(1))
+
+    //-----7.lastIndexOf-----
+    // lastIndexOf方法与indexOf方法类似：
+    //    lastIndexOf是从字符串的末尾开始查找
+    //    var data = [2, 5, 7, 3, 5];
+    //    console.log(data.lastIndexOf(5)); // 4
+    //    console.log(data.lastIndexOf(5, 3)); // 1 (从后往前，索引值小于3的开始搜索)
+    //    console.log(data.lastIndexOf(4)); // -1 (未找到)
+
+
+    // ------8reduce-------
+    //callback函数接受4个参数：之前值、当前值、索引值以及数组本身。
+    // var sum = [1, 2, 3, 4].reduce(function (previous, current, index, array) {
+    //        return previous + current;
+    //    });
+    //    console.log(sum); // 10
+
+    //------9reduceRight-------
+    //  reduceRight跟reduce相比，用法类似：
+    //    实现上差异在于reduceRight是从数组的末尾开始实现
+    //    var data = [1, 2, 3, 4];
+    //    var specialDiff = data.reduceRight(function (previous, current, index) {
+    //        if (index == 0) {
+    //            return previous + current;
+    //        }
+    //        return previous - current;
+    //    });
+    //
+    //    console.log(specialDiff); // 0
+
+</script>
+</body>
+</html>
