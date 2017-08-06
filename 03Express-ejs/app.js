@@ -11,7 +11,8 @@ var page = require('./routes/page')
 var shoppingcar=require('./routes/shoppingcar')
 var login=require("./routes/login")
 var loginSuccess=require('./routes/loginSuccess')
-
+var ok=require('./routes/ok')
+var no=require('./routes/no')
 
 var app = express();
 
@@ -35,7 +36,8 @@ app.use('/page', page)
 app.use('/shopCar',shoppingcar)
 app.use('/login',login)
 app.use('/loginSuccess',loginSuccess)
-
+app.use('/ok',ok)
+app.use('/no',no)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
