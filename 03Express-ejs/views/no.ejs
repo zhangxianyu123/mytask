@@ -4,18 +4,31 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        #myDiv{
+        body {
+            background-color: lightgray;
+        }
+
+        form {
             width: 300px;
             height: 300px;
-            background-color: beige;
-            font-size: 30px;
+            border: 10px solid black;
+            background-color: lightskyblue;
+            margin: auto;
+            margin-top: 200px;
+        }
+        p{
+            font-size: 40px;
+        }
+        a{
+            font-size: 20px;
+            margin-left: 30px;
         }
     </style>
 </head>
 <body>
-<!--接收变量-->
-<div id="myDiv">
-    <p>失败了!!哈哈哈哈66666666</p>
-</div>
+<form action="loginSuccess" method="get" name="login">
+   <p>失败了,请返回修改密码</p>
+    <a href="login">返回修改</a>
+</form>
 </body>
 </html>

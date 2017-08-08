@@ -13,6 +13,7 @@ var login=require("./routes/login")
 var loginSuccess=require('./routes/loginSuccess')
 var ok=require('./routes/ok')
 var no=require('./routes/no')
+var Password=require('./routes/Password')
 
 var app = express();
 
@@ -27,7 +28,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', index);
 app.use('/users', users);
 //引入路由:
@@ -38,6 +38,7 @@ app.use('/login',login)
 app.use('/loginSuccess',loginSuccess)
 app.use('/ok',ok)
 app.use('/no',no)
+app.use('/Password',Password)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
