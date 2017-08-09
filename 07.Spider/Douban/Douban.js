@@ -38,9 +38,12 @@ request.get(options, function (error, response, body) {
     // 豆瓣时间的文字
     $('.time-list>li .cover img').each(function (index, element) {
         brr.push($(element).attr('alt'))
-
     })
-    // console.log(brr)
+    //视频:
+    $('.main>ul>li .video-cover a').each(function (index,element) {
+          console.log($(element).attr('src'))
+    })
+    console.log(brr)
 })
 
 
